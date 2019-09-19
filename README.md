@@ -94,6 +94,16 @@ You can set URL to redirect users before they see Moodle login page. For example
 to your web application to login page. You can use "enrolkey_skipsso" URL parameter to bypass this option.
 E.g. http://yourmoodle.com/login/index.php?enrolkey_skipsso=1
 
+**Web Service Required Parameters**
+
+`username` and `email` are required. `firstname` and `lastname` are required ONLY when updating or creating. Raw POST body example:
+
+`user[username]=test%40test.com&user[email]=test%40test.com&user[firstname]=John&user[lastname]=Doe`
+
+**Web Service Optional Parameters**
+
+`department`, `idnumber`, `address`, `institution`, `url`, `description`, `city`
+
 **Example client**
 
 **Note:** the code below is not for production use. It's just a quick and dirty way to test the functionality.

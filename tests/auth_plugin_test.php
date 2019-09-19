@@ -614,6 +614,14 @@ class auth_plugin_userkey_testcase extends advanced_testcase {
             'lastname'  => new external_value(PARAM_NOTAGS, 'The family name of the user', VALUE_OPTIONAL),
             'email'     => new external_value(PARAM_RAW_TRIMMED, 'A valid and unique email address', VALUE_OPTIONAL),
             'username'  => new external_value(PARAM_USERNAME, 'A valid and unique username', VALUE_OPTIONAL),
+
+            'department'  => new external_value(PARAM_TEXT, 'Department of the user', VALUE_OPTIONAL),
+            'idnumber'    => new external_value(PARAM_RAW, 'ID Number of the user', VALUE_OPTIONAL),
+            'address'     => new external_value(PARAM_TEXT, 'Address of the user', VALUE_OPTIONAL),
+            'institution' => new external_value(PARAM_TEXT, 'Institution of the user', VALUE_OPTIONAL),
+            'url'         => new external_value(PARAM_URL, 'Web Address of the user', VALUE_OPTIONAL),
+            'description' => new external_value(PARAM_RAW, 'Description of the user', VALUE_OPTIONAL),
+            'city'        => new external_value(PARAM_TEXT, 'City/State of the user', VALUE_OPTIONAL),
         );
         $actual = $this->auth->get_request_login_url_user_parameters();
         $this->assertEquals($expected, $actual);
@@ -628,6 +636,14 @@ class auth_plugin_userkey_testcase extends advanced_testcase {
             'lastname'  => new external_value(PARAM_NOTAGS, 'The family name of the user', VALUE_OPTIONAL),
             'email'     => new external_value(PARAM_RAW_TRIMMED, 'A valid and unique email address', VALUE_OPTIONAL),
             'username'  => new external_value(PARAM_USERNAME, 'A valid and unique username', VALUE_OPTIONAL),
+
+            'department'  => new external_value(PARAM_TEXT, 'Department of the user', VALUE_OPTIONAL),
+            'idnumber'    => new external_value(PARAM_RAW, 'ID Number of the user', VALUE_OPTIONAL),
+            'address'     => new external_value(PARAM_TEXT, 'Address of the user', VALUE_OPTIONAL),
+            'institution' => new external_value(PARAM_TEXT, 'Institution of the user', VALUE_OPTIONAL),
+            'url'         => new external_value(PARAM_URL, 'Web Address of the user', VALUE_OPTIONAL),
+            'description' => new external_value(PARAM_RAW, 'Description of the user', VALUE_OPTIONAL),
+            'city'        => new external_value(PARAM_TEXT, 'City/State of the user', VALUE_OPTIONAL),
         );
         $actual = $this->auth->get_request_login_url_user_parameters();
         $this->assertEquals($expected, $actual);
