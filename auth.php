@@ -153,18 +153,11 @@ class auth_plugin_userkey extends auth_plugin_base {
         try {
             $key = $this->userkeymanager->validate_key($keyvalue);
         } catch (moodle_exception $exception) {
-            // If user is logged in and key is not valid, we'd like to logout a user.
-            if (isloggedin()) {
-                require_logout();
-            }
             print_error($exception->errorcode);
         }
 
         if (isloggedin()) {
-            if ($USER->id != $key->userid) {
-                // Logout the current user if it's different to one that associated to the valid key.
-                require_logout();
-            } else {
+            if ($USER->id == $key->userid) {
                 // Don't process further if the user is already logged in.
                 $this->userkeymanager->delete_keys($key->userid);
                 $this->redirect($redirecturl);
